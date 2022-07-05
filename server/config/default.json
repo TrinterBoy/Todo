@@ -1,5 +1,5 @@
 {
-  "mongoURI": "mongodb+srv://root:1234@devconnector-ejkgk.mongodb.net/test?retryWrites=true",
+  "mongoURI": "mongodb+srv://Trinter:1234qwer@cluster0.x5wsd.mongodb.net/?retryWrites=true&w=majority",
   "jwtSecret": "jwtSecretToken",
   "jwtExpiration": 360000
 }

@@ -1,5 +1,9 @@
 // TODO: Put a real interfaces here
 
-export interface ITodo {
-    data: string;
+interface ITodo {
+    title: string;
+    description: string;
+    year: string;
 }
+
+export default ITodo;
