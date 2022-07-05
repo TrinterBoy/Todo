@@ -16,6 +16,14 @@ const todoSchema = new Schema<ITodo>({
         type: String,
         required: true,
     },
+    public: {
+        type: Boolean,
+        required: true,
+    },
+    completed: {
+        type: Boolean,
+        required: true,
+    },
 });
 
 export const todoValidation = [
