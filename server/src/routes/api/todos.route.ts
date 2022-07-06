@@ -2,14 +2,14 @@ import { Router } from "express";
 
 import todoController from "../../controllers/todo.controller";
 import Todo, { todoValidation } from "../../models/Todo";
-import validationHandler from "../../../handlers/validationHandler";
-import tryCatchMiddleware from "../../../middleware/tryCatchMiddleware";
-import isExistMiddleware from "../../../middleware/isExistMiddleware";
+import validationHandler from "../../handlers/validationHandler";
+import tryCatchMiddleware from "../../middleware/tryCatchMiddleware";
+import isExistMiddleware from "../../middleware/isExistMiddleware";
 
 const todosRouter: Router = Router();
 
 todosRouter.get("/",
-    todoController.getAllTodo.bind(todoController)
+    tryCatchMiddleware(todoController.getAllTodo.bind(todoController))
 );
 
 todosRouter.post(

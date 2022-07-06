@@ -7,15 +7,19 @@ export default class TodoService {
         return todo;
     }
     async delete(id: string) {
-        const todo = await Todo.deleteOne({_id: id});
+        const filter = {_id: id};
+        const todo = await Todo.deleteOne(filter);
         return todo;
     }
     async update(id: string, data: ITodo) {
-        const todo = await Todo.replaceOne( {_id: id}, {...data});
+        const filter = {_id: id};
+        const replacement = {...data};
+        const todo = await Todo.replaceOne( filter, replacement);
         return todo;
     }
     async create(data: ITodo) {
-        const todo = await Todo.create({...data});
+        const inf = {...data};
+        const todo = await Todo.create(inf);
         return todo;
     }
 }
