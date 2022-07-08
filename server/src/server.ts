@@ -12,10 +12,12 @@ const router = new AppRouter(app);
 // Connect to MongoDB
 connectDB();
 
+const cors = require('cors')
 // Express configuration
 app.set("port", process.env.PORT || 5000);
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
+app.use(cors());
 
 router.init();
 
