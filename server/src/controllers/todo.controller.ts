@@ -6,7 +6,8 @@ import ITodo from "todos.type";
 export class TodoController {
     constructor(private todoService: TodoService) {}
     async getAllTodo(req: Request, _: Response) {
-        const todos = await this.todoService.findAll();
+        const todos = await this.todoService.findAll(req.app.get("user").id);
+        console.log(req.app.get("user").id);
         return todos;
     }
     async deleteTodo(req: TypedRequestParams<{id: string}>, _: Response) {
@@ -22,7 +23,7 @@ export class TodoController {
     }
     async createTodo(req: TypedRequestBody<ITodo>, _: Response) {
         const data = {...req.body};
-        const todo = await this.todoService.create(data);
+        const todo = await this.todoService.create(data, req.app.get("user").id);
         return todo;
     }
 }

@@ -2,9 +2,9 @@ import Todo from "../models/Todo";
 import ITodo from "todos.type";
 
 export default class TodoService {
-    async findAll() {
-        const todo = await Todo.find();
-        return todo;
+    async findAll(user_id: string) {
+        const todos = await Todo.find({ $or: [ { public: true }, { user: user_id } ] });
+        return todos;
     }
     async delete(id: string) {
         const filter = {_id: id};
@@ -17,9 +17,9 @@ export default class TodoService {
         const todo = await Todo.replaceOne( filter, replacement);
         return todo;
     }
-    async create(data: ITodo) {
-        const inf = {...data};
-        const todo = await Todo.create(inf);
+    async create(item: ITodo, user_id: string) {
+        const data = {...item, user: user_id};
+        const todo = await Todo.create(data);
         return todo;
     }
 }

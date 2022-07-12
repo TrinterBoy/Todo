@@ -4,8 +4,15 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import React from 'react';
 import HomeScreen from './screens/HomeScreen';
 import CreateTodoScreen from './screens/CreateTodoScreen';
-import { createTodo, home, updateTodo } from './src/static/ROUTER.KEY';
+import {
+  createTodo,
+  home,
+  login,
+  registration,
+  updateTodo } from './src/static/ROUTER.KEY';
 import UpdateTodoScreen from './screens/UpdateTodoScreen';
+import LoginScreen from './screens/LoginScreen';
+import RegistrationScreen from './screens/RegistrationScreen';
 
 
 export const queryClient = new QueryClient();
@@ -19,6 +26,8 @@ export default function App() {
           <Stack.Screen name={home} component={HomeScreen} />
           <Stack.Screen name={createTodo} component={CreateTodoScreen} />
           <Stack.Screen name={updateTodo} component={UpdateTodoScreen} />
+          <Stack.Screen name={registration} component={RegistrationScreen} />
+          <Stack.Screen name={login} component={LoginScreen} />
         </Stack.Navigator>
       </NavigationContainer>
     </QueryClientProvider>

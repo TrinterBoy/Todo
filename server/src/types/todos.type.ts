@@ -6,6 +6,7 @@ interface ITodo {
     year: string;
     public: boolean;
     completed: boolean;
+    user?: string;
 }
 
 export default ITodo;

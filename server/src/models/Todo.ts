@@ -1,4 +1,4 @@
-import { model, Schema } from "mongoose";
+import { model, Schema, Types } from "mongoose";
 import { body } from "express-validator/check";
 import ITodo from "../types/todos.type";
 
@@ -23,6 +23,10 @@ const todoSchema = new Schema<ITodo>({
     completed: {
         type: Boolean,
         required: true,
+    },
+    user: {
+        type: Types.ObjectId,
+        ref: "User"
     },
 });
 

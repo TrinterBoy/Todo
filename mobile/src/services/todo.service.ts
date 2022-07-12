@@ -1,4 +1,4 @@
-import ITodo from '../../types/todoTypes';
+import { ITodo } from '../../types/todoTypes';
 import { HttpService } from './http.setvice';
 import { Todo } from '../static/QUERY.KEY';
 

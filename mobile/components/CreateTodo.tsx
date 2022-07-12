@@ -7,7 +7,7 @@ import { home } from '../src/static/ROUTER.KEY';
 import { useMutation } from 'react-query';
 import { TextInput } from '@react-native-material/core';
 import { TodoValidationSchema } from './validation/todoValidation';
-import ITodo from '../types/todoTypes';
+import { ITodo } from '../types/todoTypes';
 import { queryClient } from '../App';
 import { Todo } from '../src/static/QUERY.KEY';
 

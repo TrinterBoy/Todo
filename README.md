@@ -59,7 +59,7 @@ Time-frames of the test task is highly important! You have only 2 weeks for the 
 3. **Authorization (login/signup) backend;**
 
 - _Use jwt [authorization](https://nodejsdev.ru/doc/jwt/) and [Passport](http://www.passportjs.org/) for that_
-- _Logic related to token processing should be stored in `middlewares/auth.middleware.ts`_
+- _Logic related to token processing should be stored in `middlewares/auth.Middleware.ts`_
 - _Private todos should be accessible only for Todo creators_
 
 4. **Authorization (login/signup) frontend;**

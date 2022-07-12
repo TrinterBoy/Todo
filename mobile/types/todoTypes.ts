@@ -1,4 +1,4 @@
-export default interface ITodo {
+export interface ITodo {
     _id?: string;
     title: string;
     description: string;
@@ -6,6 +6,7 @@ export default interface ITodo {
     public?: boolean;
     completed?: boolean;
 }
+
 export interface ITodoStrict{
     _id: string;
     title: string;

@@ -15,7 +15,7 @@ export class HttpService {
 
     private populateTokenToHeaderConfig() {
       return {
-        Authorization: localStorage.getItem('token')!,
+        Authorization: `Bearer ${localStorage.getItem('token')}`!,
       };
     }
 
@@ -24,11 +24,11 @@ export class HttpService {
       return config;
     }
 
-    public delete(config: IRequest, withAuth = false) {
+    public delete(config: IRequest, withAuth = true) {
       if (withAuth) {
         config.headers = {
-          ...config.headers,
           ...this.populateTokenToHeaderConfig(),
+          ...config.headers,
         };
       }
 
@@ -39,7 +39,7 @@ export class HttpService {
       });
     }
 
-    public post(config: IRequest, withAuth = false) {
+    public post(config: IRequest, withAuth =true) {
       if (withAuth) {
         config.headers = {
           ...config.headers,
@@ -54,7 +54,7 @@ export class HttpService {
       });
     }
 
-    public get(config: IRequest, withAuth = false) {
+    public get(config: IRequest, withAuth = true) {
       if (withAuth) {
         config.headers = {
           ...config.headers,
@@ -68,7 +68,7 @@ export class HttpService {
       });
     }
 
-    public put(config: IRequest, withAuth = false) {
+    public put(config: IRequest, withAuth = true) {
       if (withAuth) {
         config.headers = {
           ...config.headers,
